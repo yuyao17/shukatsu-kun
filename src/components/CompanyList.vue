@@ -16,10 +16,9 @@
 
 import {
     mapState,
-		mapActions
+		mapActions,
+		mapGetters
 } from 'vuex'
-
-// const _store = this.$store
 
 export default {
     name: "companyList",
@@ -28,13 +27,13 @@ export default {
 					name: ""
         }
     },
-    computed: mapState({ // use mapGetters later
-        companyNames: state => state.companies,
-				activeComp: state => state.activeCompany
-    }),
+    computed: mapGetters({
+			activeComp: 'active_comp',
+			companyNames: 'company_names'
+		}),
     methods: {
 			...mapActions([
-				"activeCompany",
+				"activeCompany"
 			]),
 			addCompanyName(e) {
 				let text = ""

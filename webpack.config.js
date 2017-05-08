@@ -41,7 +41,7 @@ module.exports = {
         compress: true,
         // hot: true, // HMR
         stats: "errors-only",
-        open: true // opens new window first time
+        //open: true // opens new window first time
     },
     plugins: [
         new HtmlWebpackPlugin({
